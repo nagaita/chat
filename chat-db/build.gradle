@@ -1,0 +1,20 @@
+buildscript {
+    dependencies {
+        classpath 'org.postgresql:postgresql:42.2.5'
+    }
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "5.2.3"
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/'
+    schemas=['chat']
+    user = 'chat'
+    password = 'mysecretpassword'
+    locations = [
+            'filesystem:chat-db/src/main/resources/db/migration/ddl',
+            'filesystem:chat-db/src/main/resources/db/migration/data'
+    ]
+}
