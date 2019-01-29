@@ -1,3 +1,5 @@
+.idea
+!gradle/wrapper/gradle-wrapper.jar
 .gradle
 
 # Compiled class file
